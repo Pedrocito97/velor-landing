@@ -1,0 +1,77 @@
+export const coffeeData = {
+  division: {
+    name: "VELOR",
+    subtitle: "CAF",
+    tagline: "Sharpen the Mind",
+    description: "Highland arabica from the Cameroonian mountains. Hand-picked by generational farmers, washed in clear mountain water, sun-dried for complexity. Coffee that commands attention.",
+    collectionImage: "/images/velor-caf-collection.jpg",
+  },
+  roasts: [
+    {
+      id: "contend",
+      name: "CONTEND",
+      roast: "Dark Roast",
+      notes: "Bold | Intense",
+      tagline: "Rally the Spirit",
+      description: "A powerful dark roast for those who face the day head-on. Bold intensity, smoky undertones, and the strength to push through any challenge.",
+    },
+    {
+      id: "decide",
+      name: "DECIDE",
+      roast: "Medium-Dark Roast",
+      notes: "Decisive | Clear",
+      tagline: "Lock in the Path Forward",
+      description: "For moments that require commitment. Rich body, clear direction, and the conviction to make choices that matter.",
+    },
+    {
+      id: "steady",
+      name: "STEADY",
+      roast: "Medium Roast",
+      notes: "Balanced | Controlled",
+      tagline: "Control the Impulse",
+      description: "The perfect equilibrium. Smooth body, caramel sweetness, and sustained energy without the jitters. Composure in every cup.",
+    },
+    {
+      id: "focus",
+      name: "FOCUS",
+      roast: "Light-Medium Roast",
+      notes: "Sharp | Precise",
+      tagline: "Sharper Attention",
+      description: "Bright acidity that cuts through the fog. Clean finish, floral notes, and the clarity to see what truly matters.",
+    },
+    {
+      id: "balance",
+      name: "BALANCE",
+      roast: "Light Roast",
+      notes: "Harmonious | Centered",
+      tagline: "Center Your Presence",
+      description: "A delicate light roast for grounded mornings. Subtle complexity, tea-like qualities, and inner calm that radiates outward.",
+    },
+  ],
+  formats: [
+    { name: "Whole Bean", size: "250g", price: "$40" },
+    { name: "Ground", size: "250g", price: "$40" },
+    { name: "Espresso Capsules", size: "10 pods", price: "$25" },
+    { name: "Cold Brew", size: "8 FL OZ", price: "$12" },
+    { name: "Coffee Concentrate", size: "8 FL OZ", price: "$18" },
+  ],
+  story: {
+    title: "The Highland Story",
+    stats: [
+      { value: "1,500m+", label: "Altitude" },
+      { value: "3rd Gen", label: "Farmers" },
+      { value: "100%", label: "Hand-Picked" },
+    ],
+    paragraphs: [
+      "In the highlands of Cameroon, where the air is thin and the mornings are cool, our coffee grows slowly. This altitude stress creates denser beans with more complex sugars.",
+      "Generational farmers hand-pick only the ripest cherries. Each bean is washed in clear mountain water and sun-dried on raised beds — never rushed, never mechanical.",
+      "The result is coffee with character. Bright acidity, clean sweetness, and a complexity that mass production can never achieve.",
+    ],
+  },
+  craftProcess: [
+    { step: 1, title: "Hand Selection", description: "Only the ripest cherries, picked by experienced hands" },
+    { step: 2, title: "Mountain Wash", description: "Clean mountain water removes the fruit, reveals the bean" },
+    { step: 3, title: "Sun Drying", description: "Raised beds under real sunlight, turned daily for even drying" },
+    { step: 4, title: "Small-Batch Roasting", description: "Roasted to order, never warehoused, always fresh" },
+  ],
+};

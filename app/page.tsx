@@ -1,43 +1,23 @@
 import { Hero } from "@/components/Hero";
-import { BrandOrigin } from "@/components/BrandOrigin";
-import { CocoaStory } from "@/components/CocoaStory";
-import { CoffeeStory } from "@/components/CoffeeStory";
-import { Farmers } from "@/components/Farmers";
-import { SingleOrigin } from "@/components/SingleOrigin";
-import { Craftsmanship } from "@/components/Craftsmanship";
-import { ProductShowcase } from "@/components/ProductShowcase";
-import { Trilogy } from "@/components/Trilogy";
+import { BrandStory } from "@/components/BrandStory";
+import { Divisions } from "@/components/Divisions";
+import { Heritage } from "@/components/Heritage";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
-      {/* Hero - Full screen with origin tagline */}
+      {/* Hero - Full screen brand introduction */}
       <Hero />
 
-      {/* Brand Origin Statement - Unifying message */}
-      <BrandOrigin />
+      {/* Brand Story - Where Craft Becomes Legacy */}
+      <BrandStory />
 
-      {/* Mount Cameroon Cocoa Story */}
-      <CocoaStory />
+      {/* Three Divisions - Spirits, Coffee, Chocolate */}
+      <Divisions />
 
-      {/* Highland Coffee Story */}
-      <CoffeeStory />
-
-      {/* The Farmers - Guardians of Legacy */}
-      <Farmers />
-
-      {/* Single-Origin Promise */}
-      <SingleOrigin />
-
-      {/* What Makes Us Special - Cocoa & Coffee pillars */}
-      <Craftsmanship />
-
-      {/* The Spirit - Product Showcase */}
-      <ProductShowcase />
-
-      {/* The Trilogy - Ember, Terra, Origin */}
-      <Trilogy />
+      {/* Heritage - Guardians of a Legacy */}
+      <Heritage />
 
       {/* Footer */}
       <Footer />
