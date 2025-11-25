@@ -9,21 +9,48 @@ const farmerProfiles = [
     role: "Cocoa Farmer",
     generation: "3rd Generation",
     story: "Walking the same steep paths his grandfather walked, carrying baskets of sun-dried beans.",
-    image: "/images/farmer-1.jpg",
+    icon: (
+      <svg className="w-16 h-16" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M32 8C32 8 20 16 20 28C20 40 32 56 32 56C32 56 44 40 44 28C44 16 32 8 32 8Z" />
+        <path d="M32 20V44" />
+        <path d="M26 28C26 28 29 32 32 32C35 32 38 28 38 28" />
+      </svg>
+    ),
   },
   {
     name: "The Processor",
     role: "Fermentation Master",
     generation: "Family Tradition",
     story: "Fermenting cocoa in wooden boxes built by his own hands, dried under real sunlight.",
-    image: "/images/farmer-2.jpg",
+    icon: (
+      <svg className="w-16 h-16" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <rect x="12" y="24" width="40" height="28" rx="2" />
+        <path d="M12 32H52" />
+        <path d="M20 24V16" />
+        <path d="M32 24V12" />
+        <path d="M44 24V16" />
+        <circle cx="20" cy="40" r="3" />
+        <circle cx="32" cy="40" r="3" />
+        <circle cx="44" cy="40" r="3" />
+      </svg>
+    ),
   },
   {
     name: "The Harvester",
     role: "Coffee Picker",
     generation: "Highland Born",
     story: "Hand-picking only the ripest cherries, washing them in clear mountain water.",
-    image: "/images/farmer-3.jpg",
+    icon: (
+      <svg className="w-16 h-16" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M32 56V32" />
+        <path d="M24 32C24 32 20 24 24 18C28 12 32 16 32 16C32 16 36 12 40 18C44 24 40 32 40 32" />
+        <circle cx="26" cy="24" r="4" />
+        <circle cx="38" cy="24" r="4" />
+        <circle cx="32" cy="18" r="3" />
+        <path d="M20 48H44" />
+        <path d="M16 56H48" />
+      </svg>
+    ),
   },
 ];
 
@@ -132,10 +159,10 @@ export function Farmers() {
             },
           }}
         >
-          {farmerProfiles.map((farmer, index) => (
+          {farmerProfiles.map((farmer) => (
             <motion.div
               key={farmer.name}
-              className="group"
+              className="group text-center"
               variants={{
                 hidden: { opacity: 0, y: 40 },
                 visible: {
@@ -145,41 +172,28 @@ export function Farmers() {
                 },
               }}
             >
-              {/* Image container */}
-              <div className="relative aspect-[4/5] mb-6 overflow-hidden bg-mocha/10">
-                <div
-                  className="absolute inset-0 bg-gradient-to-br from-mocha/40 to-mocha/60 transition-transform duration-700 group-hover:scale-105"
-                  style={{
-                    backgroundImage: `url('${farmer.image}')`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                  }}
-                />
-                {/* Sepia overlay for warmth */}
-                <div className="absolute inset-0 bg-amber-900/10 mix-blend-multiply" />
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-velor-gold/0 group-hover:bg-velor-gold/10 transition-colors duration-500" />
-
+              {/* Icon container */}
+              <div className="relative mb-8">
+                <div className="inline-flex items-center justify-center w-32 h-32 rounded-full border-2 border-velor-gold/30 text-velor-gold group-hover:border-velor-gold/60 group-hover:bg-velor-gold/5 transition-all duration-500">
+                  {farmer.icon}
+                </div>
                 {/* Generation badge */}
-                <div className="absolute top-4 left-4">
-                  <span className="bg-ivory/90 backdrop-blur-sm px-3 py-1.5 text-xs tracking-[0.2em] text-mocha uppercase">
+                <div className="absolute -bottom-2 left-1/2 -translate-x-1/2">
+                  <span className="bg-mocha px-4 py-1.5 text-xs tracking-[0.2em] text-ivory uppercase whitespace-nowrap">
                     {farmer.generation}
                   </span>
                 </div>
-
-                {/* Corner accents */}
-                <div className="absolute bottom-4 right-4 w-12 h-12 border-r border-b border-velor-gold/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
 
               {/* Content */}
-              <div className="text-center">
+              <div className="pt-4">
                 <p className="text-velor-gold tracking-[0.25em] text-xs mb-2">
                   {farmer.role.toUpperCase()}
                 </p>
-                <h3 className="font-display text-2xl text-mocha tracking-[0.1em] mb-3">
+                <h3 className="font-display text-2xl text-mocha tracking-[0.1em] mb-4">
                   {farmer.name}
                 </h3>
-                <p className="text-text-muted text-sm leading-relaxed">
+                <p className="text-text-muted text-sm leading-relaxed max-w-xs mx-auto">
                   {farmer.story}
                 </p>
               </div>
