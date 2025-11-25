@@ -26,9 +26,11 @@ const socialLinks = [
 ];
 
 const footerLinks = [
-  { name: "The Collection", href: "#collection" },
-  { name: "Our Story", href: "#craftsmanship" },
-  { name: "The Trilogy", href: "#trilogy" },
+  { name: "Our Cocoa", href: "#cocoa-story" },
+  { name: "Our Coffee", href: "#coffee-story" },
+  { name: "The Farmers", href: "#farmers" },
+  { name: "Single-Origin", href: "#single-origin" },
+  { name: "The Spirit", href: "#collection" },
 ];
 
 export function Footer() {
@@ -84,8 +86,19 @@ export function Footer() {
               className="mt-4 text-text-muted tracking-[0.15em] text-sm italic"
               variants={fadeInUp}
             >
-              Quiet Luxury. Silent Authority.
+              From the fire of the volcano to the breath of the highlands.
             </motion.p>
+
+            {/* Ethical badge */}
+            <motion.div
+              className="mt-6 inline-flex items-center gap-3 px-4 py-2 border border-velor-gold/30"
+              variants={fadeInUp}
+            >
+              <div className="w-2 h-2 bg-velor-gold/60 rounded-full" />
+              <span className="text-velor-gold/80 tracking-[0.2em] text-xs">
+                ETHICALLY SOURCED • SUPPORTING CAMEROONIAN FARMERS
+              </span>
+            </motion.div>
 
             {/* Divider */}
             <motion.div

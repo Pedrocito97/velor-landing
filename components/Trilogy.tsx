@@ -30,9 +30,9 @@ const divisions: Division[] = [
         <circle cx="24" cy="30" r="3" fill="currentColor" opacity="0.3" />
       </svg>
     ),
-    emotionalCore: "Transformation & Warmth",
+    emotionalCore: "The Volcanic Cocoa",
     description:
-      "The alchemy of fire transforms the ordinary into the extraordinary. Heat, passion, and rebirth.",
+      "Born on Mount Cameroon's fiery slopes. The volcano's heat, the mineral-rich soil, the alchemy of transformation in every bean.",
   },
   {
     name: "TERRA",
@@ -53,9 +53,9 @@ const divisions: Division[] = [
         <circle cx="24" cy="14" r="3" fill="currentColor" opacity="0.3" />
       </svg>
     ),
-    emotionalCore: "Indulgence & Grounding",
+    emotionalCore: "The Farmers' Hands",
     description:
-      "Rooted in nature, crafted from the earth's most precious gifts. Foundation, stability, abundance.",
+      "Generations of cultivators walking the same steep paths. Their wooden fermentation boxes, their sun-dried beans, their heritage.",
   },
   {
     name: "ORIGIN",
@@ -76,9 +76,9 @@ const divisions: Division[] = [
         <circle cx="10" cy="24" r="2" fill="currentColor" opacity="0.3" />
       </svg>
     ),
-    emotionalCore: "Discovery & Craft",
+    emotionalCore: "The Complete Journey",
     description:
-      "The journey of discovery, from source to sensation. Movement, exploration, transcendence.",
+      "From the highlands' breath to the volcano's fire, from soil to sensation. Single-origin excellence in every bottle.",
   },
 ];
 

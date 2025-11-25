@@ -5,24 +5,41 @@ import { useRef } from "react";
 import { fadeInUp, viewportOnce } from "@/lib/animations";
 import { Sigil } from "./ui/Sigil";
 
-const craftValues = [
+const cocoaPillars = [
   {
-    number: "01",
-    title: "Earth-Made",
-    description:
-      "From soil to bean to bar — every ingredient traced to its origin. We honor the land that gives.",
+    title: "Volcanic Soil",
+    description: "Mineral-rich black earth from centuries of eruptions creates naturally intense, darker, more complex cocoa.",
   },
   {
-    number: "02",
-    title: "Uncompromising",
-    description:
-      "No shortcuts. No substitutes. Only the finest expressions of nature's bounty, refined by master craftsmen.",
+    title: "High Altitude",
+    description: "Slow growth at elevation concentrates flavor. The same science that makes mountain wine exceptional.",
   },
   {
-    number: "03",
-    title: "Timeless",
-    description:
-      "Crafted not for trends, but for those who appreciate the eternal. A legacy in every bottle.",
+    title: "Sun-Fermented",
+    description: "No chemicals, no artificial dryers. Raw heat from the sky keeps the beans' aroma pure and powerful.",
+  },
+  {
+    title: "Zero Dilution",
+    description: "Single-origin. Single-mountain. Single-heritage. Never blended from dozens of farms.",
+  },
+];
+
+const coffeePillars = [
+  {
+    title: "Highland Altitude",
+    description: "Cool air and mist force beans to mature slowly, concentrating flavor and sweetness.",
+  },
+  {
+    title: "Hand-Picked",
+    description: "Only the ripest cherries, selected by farmers who've inherited generations of expertise.",
+  },
+  {
+    title: "Washed & Sun-Dried",
+    description: "Clear mountain water and open skies. Clean processing for a clean, bright cup.",
+  },
+  {
+    title: "Complex Profile",
+    description: "Bright acidity and mountain-born complexity that industrial farms simply cannot replicate.",
   },
 ];
 
@@ -107,7 +124,7 @@ export function Craftsmanship() {
               className="font-display text-4xl md:text-5xl lg:text-6xl text-ivory tracking-[0.08em] mb-8"
               variants={fadeInUp}
             >
-              From Soil to Sensation
+              What Makes Us Untouchable
             </motion.h2>
 
             {/* Subtitle */}
@@ -115,14 +132,14 @@ export function Craftsmanship() {
               className="text-ivory/60 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
               variants={fadeInUp}
             >
-              Luxury houses live on mythology, not marketing. Every drop tells a
-              story of origin, transformation, and mastery.
+              Most brands talk quality, but they can&apos;t back it.
+              Mount Cameroon cocoa and Highland coffee do.
             </motion.p>
           </motion.div>
 
-          {/* Values */}
+          {/* Two Column Pillars */}
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-0"
             initial="hidden"
             whileInView="visible"
             viewport={viewportOnce}
@@ -134,38 +151,76 @@ export function Craftsmanship() {
               },
             }}
           >
-            {craftValues.map((value, index) => (
-              <motion.div
-                key={value.title}
-                className="text-center group"
-                variants={{
-                  hidden: { opacity: 0, y: 40 },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] },
-                  },
-                }}
-              >
-                {/* Number */}
-                <div className="relative inline-block mb-8">
-                  <span className="font-display text-7xl md:text-8xl text-velor-gold/20">
-                    {value.number}
-                  </span>
-                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-8 h-px bg-velor-gold/40" />
-                </div>
-
-                {/* Title */}
-                <h3 className="font-display text-2xl md:text-3xl text-ivory tracking-[0.15em] mb-4">
-                  {value.title}
+            {/* Cocoa Column */}
+            <motion.div
+              className="lg:pr-12 lg:border-r lg:border-velor-gold/20"
+              variants={fadeInUp}
+            >
+              <div className="flex items-center gap-4 mb-8">
+                <svg className="w-8 h-8 text-velor-gold" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M16 4L20 12L28 14L22 20L24 28L16 24L8 28L10 20L4 14L12 12L16 4Z" />
+                </svg>
+                <h3 className="font-display text-2xl text-velor-gold tracking-[0.2em]">
+                  COCOA
                 </h3>
+              </div>
+              <p className="text-ivory/40 tracking-[0.15em] text-xs uppercase mb-8">
+                From Mount Cameroon&apos;s Volcanic Slopes
+              </p>
+              <div className="space-y-6">
+                {cocoaPillars.map((pillar, index) => (
+                  <div key={pillar.title} className="flex gap-4">
+                    <span className="font-display text-2xl text-velor-gold/30 w-8 flex-shrink-0">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <div>
+                      <h4 className="font-display text-lg text-ivory tracking-[0.1em] mb-1">
+                        {pillar.title}
+                      </h4>
+                      <p className="text-ivory/50 text-sm leading-relaxed">
+                        {pillar.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
 
-                {/* Description */}
-                <p className="text-ivory/50 leading-[1.9] text-sm md:text-base">
-                  {value.description}
-                </p>
-              </motion.div>
-            ))}
+            {/* Coffee Column */}
+            <motion.div
+              className="lg:pl-12"
+              variants={fadeInUp}
+            >
+              <div className="flex items-center gap-4 mb-8">
+                <svg className="w-8 h-8 text-velor-gold" viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <ellipse cx="16" cy="16" rx="10" ry="14" />
+                  <path d="M16 2V30" />
+                </svg>
+                <h3 className="font-display text-2xl text-velor-gold tracking-[0.2em]">
+                  COFFEE
+                </h3>
+              </div>
+              <p className="text-ivory/40 tracking-[0.15em] text-xs uppercase mb-8">
+                From the Cameroonian Highlands
+              </p>
+              <div className="space-y-6">
+                {coffeePillars.map((pillar, index) => (
+                  <div key={pillar.title} className="flex gap-4">
+                    <span className="font-display text-2xl text-velor-gold/30 w-8 flex-shrink-0">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <div>
+                      <h4 className="font-display text-lg text-ivory tracking-[0.1em] mb-1">
+                        {pillar.title}
+                      </h4>
+                      <p className="text-ivory/50 text-sm leading-relaxed">
+                        {pillar.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
           </motion.div>
 
           {/* Quote */}
@@ -189,8 +244,8 @@ export function Craftsmanship() {
             </div>
 
             <blockquote className="font-display text-xl md:text-2xl lg:text-3xl text-ivory/80 italic max-w-3xl mx-auto leading-relaxed">
-              That word carries texture. It tastes like what you&apos;re selling
-              — not sweet, but substantial.
+              The farmer&apos;s hands make the difference. Not machines. Not factories.
+              Human precision forged over generations.
             </blockquote>
 
             <div className="flex justify-center mt-6">

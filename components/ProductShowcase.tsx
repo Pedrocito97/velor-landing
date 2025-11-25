@@ -8,7 +8,10 @@ import { fadeInUp, viewportOnce } from "@/lib/animations";
 interface Product {
   name: string;
   variant: string;
+  origin: string;
+  originDetail: string;
   description: string;
+  tastingNotes: string;
   alcVol: string;
   image: string;
   accent: string;
@@ -18,8 +21,11 @@ const products: Product[] = [
   {
     name: "VELOR",
     variant: "COFFEE",
+    origin: "Highland Arabica",
+    originDetail: "Cameroonian Highlands • 1,500m+",
     description:
-      "Deep, aromatic notes of single-origin espresso, balanced with subtle hints of dark chocolate and a whisper of vanilla. A transformative experience.",
+      "Born in cool mountain air and mist, our highland coffee brings bright acidity and clean sweetness to the spirit. Hand-picked cherries, washed in mountain water, sun-dried under open skies.",
+    tastingNotes: "Bright acidity, clean sweetness, mountain-born complexity",
     alcVol: "25% ALC. VOL",
     image: "/images/velor-bottles.jpg",
     accent: "from-amber-900/20",
@@ -27,8 +33,11 @@ const products: Product[] = [
   {
     name: "VELOR",
     variant: "COCOA",
+    origin: "Volcanic Cocoa",
+    originDetail: "Mount Cameroon • Volcanic Slopes",
     description:
-      "Rich, velvety cocoa from the finest cacao regions, intertwined with notes of roasted hazelnut and a delicate caramel finish. Pure indulgence.",
+      "Infused with cocoa from Mount Cameroon's volcanic slopes. The mineral-rich soil creates a deep, volcanic richness with natural chocolate notes from altitude and slow fermentation.",
+    tastingNotes: "Deep volcanic richness, dark chocolate, warm earthy finish",
     alcVol: "25% ALC. VOL",
     image: "/images/velor-bottles-2.jpg",
     accent: "from-stone-700/20",
@@ -119,16 +128,24 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
               isEven ? "lg:pl-20 lg:pr-16" : "lg:pr-20 lg:pl-16"
             }`}
           >
-            {/* Product label */}
+            {/* Origin badge */}
             <motion.div
-              className="flex items-center gap-4 mb-8"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-mocha/5 border border-velor-gold/20 mb-6"
               variants={fadeInUp}
             >
-              <div className="w-8 h-px bg-velor-gold" />
-              <span className="text-velor-gold tracking-[0.4em] text-xs font-medium">
-                {product.name}
+              <div className="w-2 h-2 bg-velor-gold/60 rotate-45" />
+              <span className="text-velor-gold tracking-[0.2em] text-xs font-medium">
+                {product.origin.toUpperCase()}
               </span>
             </motion.div>
+
+            {/* Origin detail */}
+            <motion.p
+              className="text-text-muted tracking-[0.15em] text-xs mb-6"
+              variants={fadeInUp}
+            >
+              {product.originDetail}
+            </motion.p>
 
             {/* Product name */}
             <motion.h3
@@ -140,11 +157,24 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
 
             {/* Description */}
             <motion.p
-              className="text-text-muted leading-[1.9] text-lg mb-10 max-w-md"
+              className="text-text-muted leading-[1.9] text-lg mb-6 max-w-md"
               variants={fadeInUp}
             >
               {product.description}
             </motion.p>
+
+            {/* Tasting notes */}
+            <motion.div
+              className="mb-10"
+              variants={fadeInUp}
+            >
+              <p className="text-velor-gold/70 tracking-[0.15em] text-xs uppercase mb-2">
+                Tasting Notes
+              </p>
+              <p className="font-display text-mocha/80 italic">
+                {product.tastingNotes}
+              </p>
+            </motion.div>
 
             {/* Details */}
             <motion.div
@@ -225,15 +255,15 @@ export function ProductShowcase() {
             className="font-display text-4xl md:text-5xl text-mocha tracking-[0.1em]"
             variants={fadeInUp}
           >
-            Crafted Excellence
+            The Spirit
           </motion.h2>
 
           <motion.p
             className="mt-6 text-text-muted text-lg max-w-xl mx-auto"
             variants={fadeInUp}
           >
-            Two expressions of artisanal mastery, each a journey
-            through the senses.
+            Heritage becomes ingredient. Ingredient becomes experience.
+            The mountain and highlands live in every bottle.
           </motion.p>
         </motion.div>
       </div>

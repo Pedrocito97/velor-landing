@@ -22,8 +22,21 @@ export function Hero() {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 flex flex-col items-center justify-center px-6">
-        <Logo size="xl" showTagline={true} animated={true} />
+      <div className="relative z-10 flex flex-col items-center justify-center px-6 text-center">
+        <Logo size="xl" showTagline={false} animated={true} />
+
+        {/* New Origin Tagline */}
+        <motion.div
+          className="mt-8 max-w-2xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 2.2, duration: 0.8 }}
+        >
+          <p className="font-display text-lg md:text-xl lg:text-2xl text-mocha/80 leading-relaxed tracking-wide">
+            <span className="block">Our cocoa carries the fire of the volcano.</span>
+            <span className="block text-velor-gold italic mt-1">Our coffee carries the breath of the highlands.</span>
+          </p>
+        </motion.div>
       </div>
 
       {/* Scroll indicator */}
