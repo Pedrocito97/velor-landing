@@ -21,7 +21,7 @@ export function Sigil({
       pathLength: 1,
       opacity: 1,
       transition: {
-        pathLength: { duration: 1.5, ease: "easeInOut" },
+        pathLength: { duration: 1.5, ease: "easeInOut" as const },
         opacity: { duration: 0.3 },
       },
     },
@@ -35,7 +35,7 @@ export function Sigil({
       transition: {
         delay: 0.8,
         duration: 0.5,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
   };
@@ -121,7 +121,7 @@ export function Sigil({
             opacity: 0.4,
             transition: {
               delay: 0.5,
-              pathLength: { duration: 1, ease: "easeInOut" },
+              pathLength: { duration: 1, ease: "easeInOut" as const },
               opacity: { duration: 0.3, delay: 0.5 },
             },
           },

@@ -25,7 +25,7 @@ export const fadeIn: Variants = {
     opacity: 1,
     transition: {
       duration: 0.8,
-      ease: "easeOut",
+      ease: "easeOut" as const,
     },
   },
 };
@@ -41,7 +41,7 @@ export const scaleIn: Variants = {
     scale: 1,
     transition: {
       duration: 0.5,
-      ease: "easeOut",
+      ease: "easeOut" as const,
     },
   },
 };
@@ -69,7 +69,7 @@ export const staggerChild: Variants = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: "easeOut",
+      ease: "easeOut" as const,
     },
   },
 };
@@ -117,7 +117,7 @@ export const hoverLift = {
     boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
     transition: {
       duration: 0.3,
-      ease: "easeOut",
+      ease: "easeOut" as const,
     },
   },
 };
