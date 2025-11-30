@@ -10,7 +10,7 @@ interface CoffeeCollectionProps {
 
 export function CoffeeCollection({ image }: CoffeeCollectionProps) {
   return (
-    <section className="relative py-36 md:py-48 bg-ivory overflow-hidden">
+    <section className="relative py-20 md:py-36 lg:py-48 bg-ivory overflow-hidden">
       {/* Background texture */}
       <div className="absolute inset-0 opacity-[0.01]">
         <div
@@ -158,7 +158,7 @@ export function CoffeeCollection({ image }: CoffeeCollectionProps) {
 
         {/* Product names below image - Enhanced timing */}
         <motion.div
-          className="mt-20 grid grid-cols-5 gap-4 text-center"
+          className="mt-12 md:mt-20 grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-4 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -190,7 +190,7 @@ export function CoffeeCollection({ image }: CoffeeCollectionProps) {
 
         {/* Enhanced bottom ornament */}
         <motion.div
-          className="flex items-center justify-center gap-3 mt-20"
+          className="flex items-center justify-center gap-3 mt-12 md:mt-20"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

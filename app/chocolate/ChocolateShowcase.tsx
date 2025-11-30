@@ -14,7 +14,7 @@ export function ChocolateShowcase({
   featureImage,
 }: ChocolateShowcaseProps) {
   return (
-    <section className="relative py-36 md:py-48 bg-mocha overflow-hidden">
+    <section className="relative py-20 md:py-36 lg:py-48 bg-mocha overflow-hidden">
       {/* Background texture */}
       <div className="absolute inset-0 opacity-[0.015]">
         <div
@@ -263,22 +263,22 @@ export function ChocolateShowcase({
 
         {/* Specs badge */}
         <motion.div
-          className="mt-20 flex justify-center"
+          className="mt-12 md:mt-20 flex justify-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 1, duration: 0.8 }}
         >
-          <div className="inline-flex items-center gap-4 px-8 py-3 border border-velor-gold/15">
-            <span className="text-ivory/50 tracking-[0.25em] text-[10px] uppercase">
+          <div className="inline-flex items-center gap-3 md:gap-4 px-5 md:px-8 py-3 border border-velor-gold/15">
+            <span className="text-ivory/50 tracking-[0.15em] md:tracking-[0.25em] text-[9px] md:text-[10px] uppercase">
               Slow Conched
             </span>
             <div className="w-px h-3 bg-velor-gold/20" />
-            <span className="text-ivory/50 tracking-[0.25em] text-[10px] uppercase">
+            <span className="text-ivory/50 tracking-[0.15em] md:tracking-[0.25em] text-[9px] md:text-[10px] uppercase">
               Small Batch
             </span>
             <div className="w-px h-3 bg-velor-gold/20" />
-            <span className="text-ivory/50 tracking-[0.25em] text-[10px] uppercase">
+            <span className="text-ivory/50 tracking-[0.15em] md:tracking-[0.25em] text-[9px] md:text-[10px] uppercase">
               Bean to Bar
             </span>
           </div>
@@ -286,7 +286,7 @@ export function ChocolateShowcase({
 
         {/* Enhanced bottom ornament */}
         <motion.div
-          className="flex items-center justify-center gap-3 mt-20"
+          className="flex items-center justify-center gap-3 mt-12 md:mt-20"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

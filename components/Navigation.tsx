@@ -28,14 +28,14 @@ export function Navigation() {
       <motion.nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? "bg-ivory/95 backdrop-blur-md shadow-sm"
+            ? "glass-nav nav-gold-accent shadow-[0_1px_3px_rgba(0,0,0,0.02)]"
             : "bg-transparent"
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
       >
-        <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="max-w-7xl mx-auto px-8 py-5">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="relative z-10">
@@ -43,12 +43,12 @@ export function Navigation() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-12">
+            <div className="hidden md:flex items-center gap-14">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-mocha/80 hover:text-velor-gold tracking-[0.2em] text-xs font-medium transition-colors duration-300"
+                  className="nav-link-elegant text-mocha/70 hover:text-velor-gold tracking-[0.25em] text-[11px] font-medium transition-all duration-400"
                 >
                   {link.label}
                 </Link>
@@ -88,7 +88,7 @@ export function Navigation() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="fixed inset-0 z-40 bg-ivory"
+            className="fixed inset-0 z-40 bg-ivory-warm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

@@ -16,7 +16,7 @@ interface CoffeeFormatsProps {
 
 export function CoffeeFormats({ formats }: CoffeeFormatsProps) {
   return (
-    <section className="relative py-36 md:py-48 bg-mocha overflow-hidden">
+    <section className="relative py-20 md:py-36 lg:py-48 bg-mocha overflow-hidden">
       {/* Background texture */}
       <div className="absolute inset-0 opacity-[0.015]">
         <div
@@ -193,7 +193,7 @@ export function CoffeeFormats({ formats }: CoffeeFormatsProps) {
 
         {/* Enhanced bottom ornament */}
         <motion.div
-          className="flex items-center justify-center gap-3 mt-20"
+          className="flex items-center justify-center gap-3 mt-12 md:mt-20"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

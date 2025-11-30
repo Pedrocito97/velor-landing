@@ -127,3 +127,126 @@ export const viewportOnce = {
   once: true,
   margin: "-100px",
 };
+
+// ===== SPIRITS PAGE LUXURY ANIMATIONS =====
+
+// Dramatic bottle reveal with scale and opacity
+export const bottleReveal: Variants = {
+  hidden: {
+    opacity: 0,
+    scale: 0.9,
+    y: 40,
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: {
+      duration: 1.2,
+      ease: [0.25, 0.1, 0.25, 1],
+    },
+  },
+};
+
+// Floating animation for bottles (use with animate prop)
+export const floatAnimation = {
+  y: [0, -10, 0],
+  transition: {
+    duration: 4,
+    repeat: Infinity,
+    ease: "easeInOut" as const,
+  },
+};
+
+// Spotlight glow pulse effect
+export const glowPulse = {
+  opacity: [0.3, 0.6, 0.3],
+  scale: [1, 1.05, 1],
+  transition: {
+    duration: 3,
+    repeat: Infinity,
+    ease: "easeInOut" as const,
+  },
+};
+
+// Step reveal for ritual/process sections (use with custom prop for delay)
+export const stepReveal: Variants = {
+  hidden: { opacity: 0, x: -30 },
+  visible: (i: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: i * 0.3,
+      duration: 0.6,
+      ease: [0.4, 0, 0.2, 1],
+    },
+  }),
+};
+
+// Draw line animation for SVG paths
+export const drawLine: Variants = {
+  hidden: { pathLength: 0, opacity: 0 },
+  visible: {
+    pathLength: 1,
+    opacity: 1,
+    transition: {
+      pathLength: { duration: 1.5, ease: "easeInOut" as const },
+      opacity: { duration: 0.3 },
+    },
+  },
+};
+
+// Cinematic hero stagger
+export const heroStagger: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.3,
+    },
+  },
+};
+
+// Hero child element animation
+export const heroChild: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.4, 0, 0.2, 1],
+    },
+  },
+};
+
+// Parallax scale effect for backgrounds
+export const parallaxScale: Variants = {
+  hidden: {
+    scale: 1.1,
+    opacity: 0,
+  },
+  visible: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      duration: 1.5,
+      ease: [0.4, 0, 0.2, 1],
+    },
+  },
+};
+
+// Gold shimmer effect
+export const shimmer = {
+  x: ["-100%", "100%"],
+  transition: {
+    duration: 2,
+    repeat: Infinity,
+    repeatDelay: 3,
+    ease: "linear" as const,
+  },
+};

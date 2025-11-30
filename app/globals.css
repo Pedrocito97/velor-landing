@@ -208,3 +208,269 @@ section {
     padding-bottom: var(--spacing-section-mobile);
   }
 }
+
+/* ============================================
+   SPIRITS PAGE - Luxury Dark Sections
+   ============================================ */
+
+/* Dark section base */
+.section-dark {
+  background-color: var(--color-mocha);
+  color: var(--color-ivory);
+}
+
+.section-obsidian {
+  background-color: var(--color-obsidian);
+  color: var(--color-ivory);
+}
+
+/* Bottle spotlight effect */
+.bottle-spotlight {
+  position: relative;
+}
+
+.bottle-spotlight::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(197, 165, 114, 0.15) 0%,
+    rgba(197, 165, 114, 0.05) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Gold glow effect */
+.gold-glow {
+  box-shadow:
+    0 0 60px rgba(197, 165, 114, 0.1),
+    0 0 120px rgba(197, 165, 114, 0.05);
+}
+
+/* Ritual step connector line */
+.ritual-connector {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-velor-gold) 50%,
+    transparent 100%
+  );
+  opacity: 0.3;
+}
+
+/* Dramatic text shadow for dark backgrounds */
+.text-shadow-luxury {
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Triple frame decoration */
+.triple-frame {
+  position: relative;
+}
+
+.triple-frame::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border: 1px solid rgba(197, 165, 114, 0.1);
+  pointer-events: none;
+}
+
+.triple-frame::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 1px solid rgba(197, 165, 114, 0.2);
+  pointer-events: none;
+}
+
+/* Cinematic overlay for hero sections */
+.cinematic-overlay {
+  position: relative;
+}
+
+.cinematic-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(61, 43, 31, 0.4) 0%,
+    rgba(61, 43, 31, 0.8) 50%,
+    rgba(61, 43, 31, 0.95) 100%
+  );
+  pointer-events: none;
+}
+
+/* Floating particles animation */
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-40px) translateX(-5px);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translateY(-20px) translateX(-10px);
+    opacity: 0.5;
+  }
+}
+
+.float-particle {
+  animation: floatParticle 8s ease-in-out infinite;
+}
+
+.float-particle-delayed {
+  animation: floatParticle 10s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.float-particle-slow {
+  animation: floatParticle 12s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+/* Shimmer effect for gold accents */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-velor-gold) 0%,
+    var(--color-velor-gold-light) 25%,
+    var(--color-velor-gold) 50%,
+    var(--color-velor-gold-light) 75%,
+    var(--color-velor-gold) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient divider line */
+.gradient-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-velor-gold) 20%,
+    var(--color-velor-gold) 80%,
+    transparent 100%
+  );
+  opacity: 0.4;
+}
+
+/* Dark section text colors */
+.section-dark .text-muted {
+  color: rgba(245, 242, 235, 0.6);
+}
+
+.section-obsidian .text-muted {
+  color: rgba(245, 242, 235, 0.5);
+}
+
+/* ============================================
+   ENHANCED NAVIGATION + HERO STYLES
+   Lighter, More Elegant Luxury
+   ============================================ */
+
+/* Glass-morphism navigation */
+.glass-nav {
+  background: rgba(250, 248, 243, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(197, 165, 114, 0.1);
+}
+
+/* Top gold accent line */
+.nav-gold-accent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-velor-gold) 20%,
+    var(--color-velor-gold-light) 50%,
+    var(--color-velor-gold) 80%,
+    transparent 100%
+  );
+  opacity: 0.6;
+}
+
+/* Elegant nav link underline */
+.nav-link-elegant {
+  position: relative;
+}
+
+.nav-link-elegant::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-velor-gold),
+    transparent
+  );
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link-elegant:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Hero vignette effect */
+.hero-vignette {
+  position: relative;
+}
+
+.hero-vignette::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 80% 60% at center,
+    transparent 0%,
+    transparent 50%,
+    rgba(250, 248, 243, 0.4) 100%
+  );
+  pointer-events: none;
+}
+
+/* Particle glow effect */
+.particle-glow {
+  box-shadow: 0 0 8px rgba(197, 165, 114, 0.15);
+  filter: blur(0.5px);
+}

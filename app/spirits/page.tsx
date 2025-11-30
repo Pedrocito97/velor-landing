@@ -1,46 +1,59 @@
 import { Metadata } from "next";
-import { ProductHero } from "@/components/ProductHero";
-import { OriginStory } from "@/components/OriginStory";
-import { CraftTimeline } from "@/components/CraftTimeline";
+import {
+  SpiritsHero,
+  CollectionIntro,
+  CoffeeExpressionShowcase,
+  CocoaExpressionShowcase,
+  CraftRitualSection,
+  HeritageOrigin,
+  DistillationProcess,
+  TastingExperience,
+  CollectionFooter,
+} from "@/components/spirits";
 import { Footer } from "@/components/Footer";
 import { spiritsData } from "@/lib/products/spirits";
-import { SpiritsProducts } from "./SpiritsProducts";
 
 export const metadata: Metadata = {
-  title: "VELOR Spirits | Premium Liqueurs",
-  description: spiritsData.division.description,
+  title: "VELOR Spirits | Premium African Liqueurs",
+  description: "Premium liqueurs crafted from single-origin Cameroonian cocoa and highland arabica coffee. Experience the art of African indulgence.",
 };
 
 export default function SpiritsPage() {
   return (
     <main className="bg-ivory">
-      <ProductHero
+      {/* 1. Cinematic Hero */}
+      <SpiritsHero
         name={spiritsData.division.name}
         subtitle={spiritsData.division.subtitle}
         tagline={spiritsData.division.tagline}
-        description={spiritsData.division.description}
+        description={spiritsData.division.heroDescription}
       />
 
-      <SpiritsProducts products={spiritsData.products} />
+      {/* 2. Collection Introduction */}
+      <CollectionIntro products={spiritsData.products} />
 
-      <OriginStory
-        title={spiritsData.story.title}
-        paragraphs={spiritsData.story.paragraphs}
-        image="/images/highlands-coffee.jpg"
-        imagePosition="right"
-      />
+      {/* 3. Coffee Expression Showcase */}
+      <CoffeeExpressionShowcase product={spiritsData.products.coffee} />
 
-      <CraftTimeline
-        steps={spiritsData.craftPillars.map((pillar, index) => ({
-          step: index + 1,
-          title: pillar.title,
-          description: pillar.description,
-        }))}
-        title="The Craft"
-        subtitle="OUR PILLARS"
-        darkMode={true}
-      />
+      {/* 4. Cocoa Expression Showcase */}
+      <CocoaExpressionShowcase product={spiritsData.products.cocoa} />
 
+      {/* 5. The Ritual */}
+      <CraftRitualSection data={spiritsData.ritual} />
+
+      {/* 6. Heritage & Origin */}
+      <HeritageOrigin data={spiritsData.heritage} />
+
+      {/* 7. Distillation Process */}
+      <DistillationProcess steps={spiritsData.process} />
+
+      {/* 8. Tasting Experience */}
+      <TastingExperience products={spiritsData.products} />
+
+      {/* 9. Collection Footer CTA */}
+      <CollectionFooter products={spiritsData.products} />
+
+      {/* 10. Footer */}
       <Footer />
     </main>
   );
